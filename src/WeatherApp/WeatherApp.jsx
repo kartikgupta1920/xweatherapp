@@ -8,7 +8,7 @@ const WeatherApp = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const API_KEY = '78ebfcca9a9e418486584029240109'; 
+  const API_KEY = '78ebfcca9a9e418486584029240109'; // Your actual API key
 
   const fetchWeatherData = async () => {
     if (!city.trim()) {
@@ -17,8 +17,8 @@ const WeatherApp = () => {
     }
 
     setLoading(true);
-    setWeatherData(null); 
-    setError(''); 
+    setWeatherData(null);
+    setError('');
 
     try {
       const response = await axios.get(
@@ -33,7 +33,7 @@ const WeatherApp = () => {
       setWeatherData(response.data);
     } catch (error) {
       setError('Failed to fetch weather data');
-      alert('Failed to fetch weather data'); 
+      alert('Failed to fetch weather data');
     } finally {
       setLoading(false);
     }
