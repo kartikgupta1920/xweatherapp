@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import  './WeatherApp.css';
+import './WeatherApp.css';
 
 const WeatherApp = () => {
   const [city, setCity] = useState('');
@@ -61,27 +61,31 @@ const WeatherApp = () => {
           Search
         </button>
       </div>
-      {loading && <p className="loading">Loading data…</p>}
-      {error && <p className="error">{error}</p>}
-      {weatherData && (
-        <div className="weather-cards">
-          <div className="weather-card">
-            <p>Temperature:</p>
-            <h2>{weatherData.current.temp_c}°C</h2>
+      {loading ? (
+        <p className="loading">Loading data...</p>
+      ) : error ? (
+        <p className="error">{error}</p>
+      ) : (
+        weatherData && (
+          <div className="weather-cards">
+            <div className="weather-card">
+              <p>Temperature:</p>
+              <h2>{weatherData.current.temp_c}°C</h2>
+            </div>
+            <div className="weather-card">
+              <p>Humidity:</p>
+              <h2>{weatherData.current.humidity}%</h2>
+            </div>
+            <div className="weather-card">
+              <p>Condition:</p>
+              <h2>{weatherData.current.condition.text}</h2>
+            </div>
+            <div className="weather-card">
+              <p>Wind Speed:</p>
+              <h2>{weatherData.current.wind_kph} kph</h2>
+            </div>
           </div>
-          <div className="weather-card">
-            <p>Humidity:</p>
-            <h2>{weatherData.current.humidity}%</h2>
-          </div>
-          <div className="weather-card">
-            <p>Condition:</p>
-            <h2>{weatherData.current.condition.text}</h2>
-          </div>
-          <div className="weather-card">
-            <p>Wind Speed:</p>
-            <h2>{weatherData.current.wind_kph} kph</h2>
-          </div>
-        </div>
+        )
       )}
     </div>
   );
