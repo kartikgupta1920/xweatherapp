@@ -1,0 +1,87 @@
+/* src/components/WeatherApp/WeatherApp.module.css */
+
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #f0f4f8;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #333;
+}
+
+.searchContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.input {
+    width: 70%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.input:focus {
+    border-color: #007bff;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: 2px solid #007bff;
+    background-color: #4fe326;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.loading {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 10px;
+}
+
+.weather-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.weather-card {
+    background-color: #fff;
+    width: 120px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.weather-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.weather-card h2 {
+    margin: 10px 0 0 0;
+    font-size: 1.5rem;
+    color: #333;
+}
