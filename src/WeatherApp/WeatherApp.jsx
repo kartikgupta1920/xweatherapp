@@ -1,5 +1,3 @@
-// src/components/WeatherApp/WeatherApp.js
-
 import React, { useState } from 'react';
 import axios from 'axios';
 import styles from './WeatherApp.module.css';
@@ -10,7 +8,7 @@ const WeatherApp = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const API_KEY = 'YOUR_API_KEY'; // Replace with your actual API key
+  const API_KEY = '78ebfcca9a9e418486584029240109'; 
 
   const fetchWeatherData = async () => {
     if (!city.trim()) {
@@ -19,8 +17,8 @@ const WeatherApp = () => {
     }
 
     setLoading(true);
-    setWeatherData(null);
-    setError('');
+    setWeatherData(null); 
+    setError(''); 
 
     try {
       const response = await axios.get(
@@ -35,6 +33,7 @@ const WeatherApp = () => {
       setWeatherData(response.data);
     } catch (error) {
       setError('Failed to fetch weather data');
+      alert('Failed to fetch weather data'); 
     } finally {
       setLoading(false);
     }
