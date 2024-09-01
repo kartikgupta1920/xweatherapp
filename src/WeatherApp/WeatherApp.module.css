@@ -39,7 +39,7 @@
     padding: 10px 20px;
     font-size: 1rem;
     border: 2px solid #007bff;
-    background-color: #4fe326;
+    background-color: #007bff;
     color: #fff;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
@@ -57,7 +57,13 @@
     margin-top: 10px;
 }
 
-.weather-cards {
+.error {
+    font-size: 1.2rem;
+    color: red;
+    margin-top: 10px;
+}
+
+.weatherCards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -65,7 +71,7 @@
     margin-top: 20px;
 }
 
-.weather-card {
+.weatherCard {
     background-color: #fff;
     width: 120px;
     padding: 15px;
@@ -74,13 +80,13 @@
     text-align: center;
 }
 
-.weather-card p {
+.weatherCard p {
     margin: 0;
     font-size: 0.9rem;
     color: #666;
 }
 
-.weather-card h2 {
+.weatherCard h2 {
     margin: 10px 0 0 0;
     font-size: 1.5rem;
     color: #333;

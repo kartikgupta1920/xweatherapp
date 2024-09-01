@@ -8,6 +8,7 @@ const WeatherApp = () => {
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const API_KEY = 'YOUR_API_KEY'; // Replace with your actual API key
 
@@ -19,6 +20,7 @@ const WeatherApp = () => {
 
     setLoading(true);
     setWeatherData(null);
+    setError('');
 
     try {
       const response = await axios.get(
@@ -32,7 +34,7 @@ const WeatherApp = () => {
       );
       setWeatherData(response.data);
     } catch (error) {
-      alert('Failed to fetch weather data');
+      setError('Failed to fetch weather data');
     } finally {
       setLoading(false);
     }
@@ -61,21 +63,22 @@ const WeatherApp = () => {
         </button>
       </div>
       {loading && <p className={styles.loading}>Loading data…</p>}
+      {error && <p className={styles.error}>{error}</p>}
       {weatherData && (
-        <div className={styles['weather-cards']}>
-          <div className={styles['weather-card']}>
+        <div className={styles.weatherCards}>
+          <div className={styles.weatherCard}>
             <p>Temperature:</p>
             <h2>{weatherData.current.temp_c}°C</h2>
           </div>
-          <div className={styles['weather-card']}>
+          <div className={styles.weatherCard}>
             <p>Humidity:</p>
             <h2>{weatherData.current.humidity}%</h2>
           </div>
-          <div className={styles['weather-card']}>
+          <div className={styles.weatherCard}>
             <p>Condition:</p>
             <h2>{weatherData.current.condition.text}</h2>
           </div>
-          <div className={styles['weather-card']}>
+          <div className={styles.weatherCard}>
             <p>Wind Speed:</p>
             <h2>{weatherData.current.wind_kph} kph</h2>
           </div>
