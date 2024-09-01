@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import styles from './WeatherApp.module.css';
+import  './WeatherApp.css';
 
 const WeatherApp = () => {
   const [city, setCity] = useState('');
@@ -46,38 +46,38 @@ const WeatherApp = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Weather App</h1>
-      <div className={styles.searchContainer}>
+    <div className="container">
+      <h1 className="title">Weather App</h1>
+      <div className="searchContainer">
         <input
           type="text"
           placeholder="Enter city name"
           value={city}
           onChange={(e) => setCity(e.target.value)}
           onKeyPress={handleKeyPress}
-          className={styles.input}
+          className="input"
         />
-        <button onClick={fetchWeatherData} className={styles.button}>
+        <button onClick={fetchWeatherData} className="button">
           Search
         </button>
       </div>
-      {loading && <p className={styles.loading}>Loading data…</p>}
-      {error && <p className={styles.error}>{error}</p>}
+      {loading && <p className="loading">Loading data…</p>}
+      {error && <p className="error">{error}</p>}
       {weatherData && (
-        <div className={styles.weatherCards}>
-          <div className={styles.weatherCard}>
+        <div className="weatherCards">
+          <div className="weather-card">
             <p>Temperature:</p>
             <h2>{weatherData.current.temp_c}°C</h2>
           </div>
-          <div className={styles.weatherCard}>
+          <div className="weather-card">
             <p>Humidity:</p>
             <h2>{weatherData.current.humidity}%</h2>
           </div>
-          <div className={styles.weatherCard}>
+          <div className="weather-card">
             <p>Condition:</p>
             <h2>{weatherData.current.condition.text}</h2>
           </div>
-          <div className={styles.weatherCard}>
+          <div className="weather-card">
             <p>Wind Speed:</p>
             <h2>{weatherData.current.wind_kph} kph</h2>
           </div>

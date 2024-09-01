@@ -72,7 +72,7 @@
     margin-top: 20px;
   }
   
-  .weatherCard {
+  .weather-card {
     background-color: #7cb705;
     width: 180px;
     padding: 15px;
@@ -81,13 +81,13 @@
     text-align: center;
   }
   
-  .weatherCard p {
+  .weather-card p {
     margin: 2;
     font-size: 1rem;
     color: #100303;
   }
   
-  .weatherCard h2 {
+  .weather-card h2 {
     margin: 10px 5px 5px 5px;
     font-size: 1.5rem;
     color: #333;
